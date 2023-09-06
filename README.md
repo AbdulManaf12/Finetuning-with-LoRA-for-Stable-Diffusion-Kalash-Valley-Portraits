@@ -21,7 +21,7 @@ $ python lora/training_scripts/train_lora_dreambooth.py \
   --pretrained_model_name_or_path=runwayml/stable-diffusion-v1-5 \
   --instance_data_dir=/path/to/training/images/folder \
   --output_dir=/path/to/output/directory \
-  --instance_prompt="Your Prompt Goes Here" \
+  --instance_prompt="kallashV" \
   --resolution=512 \
   --use_8bit_adam \
   --mixed_precision=fp16 \
