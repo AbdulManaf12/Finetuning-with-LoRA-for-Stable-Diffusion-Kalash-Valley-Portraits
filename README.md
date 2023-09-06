@@ -7,12 +7,12 @@ This repository contains the implementation for fine-tuning a pretrained Stable 
 * Training Method: Utilize distributed training using PyTorch XLA for efficient distributed training. ❌
 
 ## Dataset
-Our dataset was curated by randomly selecting images from [Pinterest](https://www.pinterest.com/search/pins/?q=kalash%20valley&rs=typed). These images have been manually reviewed and verified for quality. You can access the dataset in the ['KalashValleyImages'](https://github.com/AbdulManaf12/Finetuning-with-LoRA-for-Stable-Diffusion-Kalash-Valley-Portraits/tree/main/KalashValleyImages) folder, you can also check the following image:
+This dataset was curated by randomly selecting images from [Pinterest](https://www.pinterest.com/search/pins/?q=kalash%20valley&rs=typed). These images have been manually reviewed and verified for quality. You can access the dataset in the ['KalashValleyImages'](https://github.com/AbdulManaf12/Finetuning-with-LoRA-for-Stable-Diffusion-Kalash-Valley-Portraits/tree/main/KalashValleyImages) folder, you can also check the following image:
  ![dataset big view](https://github.com/AbdulManaf12/Finetuning-with-LoRA-for-Stable-Diffusion-Kalash-Valley-Portraits/blob/main/Input.png)
 
 ## Training
 
-For the training phase, we leveraged a publicly available repository on GitHub and fine-tuned it with our custom dataset. The repository we utilized is called [Low-rank Adaptation for Fast Text-to-Image Diffusion Fine-tuning](https://github.com/cloneofsimo/lora), while our choice for the pretrained model came from [Hugging Face](https://huggingface.co/runwayml/stable-diffusion-v1-5), named 'runwayml/stable-diffusion-v1-5'.
+For the training phase, I leveraged a publicly available repository on GitHub and fine-tuned it with our custom dataset. The repository I utilized is called [Low-rank Adaptation for Fast Text-to-Image Diffusion Fine-tuning](https://github.com/cloneofsimo/lora), while my choice for the pretrained model came from [Hugging Face](https://huggingface.co/runwayml/stable-diffusion-v1-5), named 'runwayml/stable-diffusion-v1-5'.
 
 To perform the training, execute the following command:
 
@@ -37,7 +37,7 @@ $ python lora/training_scripts/train_lora_dreambooth.py \
   --save_steps 500
 ```
 
-Please note that due to the limitations of a single GPU in our Colab environment, we did not utilize distributed GPU training. However, if you have access to multiple GPUs and wish to utilize them for training, you can execute the following command:
+Please note that due to the limitations of a single GPU in our Colab environment, I did not utilize distributed GPU training. However, if you have access to multiple GPUs and wish to utilize them for training, you can execute the following command:
 ``` console
 $ python -m torch.distributed.launch --nproc_per_node=<NUM_GPUS> lora/training_scripts/train_lora_dreambooth.py \
    .... (rest of the same command).
